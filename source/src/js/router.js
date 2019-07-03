@@ -12,13 +12,15 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import ReduxThunk from 'redux-thunk';
 
 import Dialog from './containers/public/dialog';
+
 require('../css/public/base.scss');
 require('../css/public/dialog.scss');
 import reducer from './reducers/index';
+
 require('./untils/ajax');
 require('../css/style.scss');
 
-import {newList,Video} from './routers/indexRouter'
+import {newList, Video,Three} from './routers/indexRouter'
 
 //redux 传入中间件
 const store = createStore(reducer, compose(
@@ -34,21 +36,8 @@ ReactDom.render(
             <BrowserRouter>
                 <Index>
                     <Route path='/newList' component={newList}/>
-                    <Route path='/Video' component={Video}/>
-                    <Route path='/List' component={
-                        (props) => (
-                            <Bundle load={() => import('./containers/list')}>
-                                {(List) => <List {...props} />}
-                            </Bundle>
-                        )
-                    }/>
-                    <Route path='/Three' component={
-                        (props) => (
-                            <Bundle load={() => import('./containers/three')}>
-                                {(Index) => <Index {...props} />}
-                            </Bundle>
-                        )
-                    }/>
+                    <Route path='/Three' component={Three}/>
+                    <Route path='/RouteBox/video' component={Video}/>
                 </Index>
             </BrowserRouter>
         </Router>

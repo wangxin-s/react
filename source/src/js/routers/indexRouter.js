@@ -11,3 +11,8 @@ export const Video=(props) => (
         {(Video) => <Video {...props} />}
     </Bundle>
 );
+export const Three=(props) => (
+    <Bundle load={() => import('../containers/three')}>
+        {(Three) => <Three {...props} />}
+    </Bundle>
+);
