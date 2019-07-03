@@ -58,7 +58,7 @@ module.exports={
             template:'./src/index.html'
         }),
         new MiniCssExtractPlugin({
-            filename:'css/[name]_[hash:8].css'
+            filename:'css/[name]_[hash:8].css',
         }),
         new webpack.ProvidePlugin({
             $: "jquery",//解决JQUERY全局问题

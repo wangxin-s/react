@@ -18,6 +18,8 @@ import reducer from './reducers/index';
 require('./untils/ajax');
 require('../css/style.scss');
 
+import {newList,Video} from './routers/indexRouter'
+
 //redux 传入中间件
 const store = createStore(reducer, compose(
     applyMiddleware(ReduxThunk),
@@ -31,6 +33,8 @@ ReactDom.render(
         <Router history={history}>
             <BrowserRouter>
                 <Index>
+                    <Route path='/newList' component={newList}/>
+                    <Route path='/Video' component={Video}/>
                     <Route path='/List' component={
                         (props) => (
                             <Bundle load={() => import('./containers/list')}>
