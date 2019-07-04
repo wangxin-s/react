@@ -23,7 +23,7 @@ function getLoginFun(options){
                 }));
             },
             error:function(){
-                dispatch(freeLoanHandle({
+                dispatch(listHandle({
                     tbodyList:"fail"
                 }));
             },
